@@ -6,46 +6,46 @@
 
 
 
-const listCity = [
-    ['Lome','Tsevie','Vogan','Aneho','Tabligbo'],
-    ['Atakpame','Notse','Kpalime','Badou','Amlame'],
-    ['Sokode','Tchamba','Sotouboua','Blitta','Djarkpanga'],
-    ['Bafilo','Bassar','Kara', 'Kpagouda','Niamtougou','Defale'],
-    ['Dapaong','Mango','Galangachi','Biankouri','Vavou']
-                ]
+let listM = ['Lome','Tsevie','Vogan','Aneho','Tabligbo']
+let listP = ['Atakpame','Notse','Kpalime','Badou','Amlame']
+let listC = ['Sokode','Tchamba','Sotouboua','Blitta','Djarkpanga']
+let listK = ['Bafilo','Bassar','Kara', 'Kpagouda','Niamtougou','Defale']
+let listS = ['Dapaong','Mango','Galangachi','Biankouri','Vavou']
+let cities = listM.concat(listP,listK,listS,listC);
+let playoffCity1;
+let playoffCity2;
+let playoffCity;
 
-function choixVille(listCity){
-  // for (let i = 0; i < listCity.length; i++)
-  const Region1 = listCity[Math.floor(Math.random()* listCity.length)]
-  // console.log(Region1)
-  const Region2 = listCity[Math.floor(Math.random()* listCity.length)]
-  // console.log(Region2)
+for (let i = 0; i <= cities.length; i++){
+    // playoffCity1 = cities[Math.floor(Math.random() * cities.length)]
+    // playoffCity2 = cities[Math.floor(Math.random() * cities.length)]
     
+
+    if (playoffCity1 === playoffCity2){
+        playoffCity1 = cities[Math.floor(Math.random() * cities.length)]
+        playoffCity2 = cities[Math.floor(Math.random() * cities.length)]
     }
+    else if (playoffCity1 == []){
+        playoffCity1 = cities[Math.floor(Math.random()* cities.length)]
+    }
+    else if (playoffCity2 == []){
+        playoffCity2 = cities[Math.floor(Math.random()* cities.length)]
+    }
+    else {
+      playoffCity1 = cities[Math.floor(Math.random()* cities.length)]
+      console.log("Generating Playoff City 1:", playoffCity1)  
+      cities = cities.filter(function(item){
+        return item !== playoffCity1
+      })
 
-    
+      playoffCity2 = cities[Math.floor(Math.random()* cities.length)]
+      console.log("Generating Playoff City 2:", playoffCity2)
+      cities = cities.filter(function(item){
+        return item !== playoffCity2
+      })
+      
+    }
+    // console.log("Generating Playoff City 1:", playoffCity1)
+    // console.log("Generating Playoff City 2:", playoffCity2)
 }
-
-function selection(Region){
-    const listCity1 = ['Lome','Tsevie','Vogan','Aneho','Tabligbo']
-    const listCity2 = ['Atakpame','Notse','Kpalime','Badou','Amlame']
-    const listCity3 = ['Sokode','Tchamba','Sotouboua','Blitta','Djarkpanga']
-    const listCity4 = ['Bafilo','Bassar','Kara', 'Kpagouda','Niamtougou','Defale']
-    const listCity5 = ['Dapaong','Mango','Galangachi','Biankouri','Vavou']
-
-   
-
-}
-
-function semi_final(Region1,Region2){
-
-}  
-function final(Region){
-
-}
-
-
-const menu=true;
-while (menu){
-    console.log('!!!WELCOME TO THE TOURNAMENT!!! \n  1. Enter game type \n  2. Exit \n')
-    menu=input ("WELCOME! Please choose: ")
+// console.log("All cities have been selected")
