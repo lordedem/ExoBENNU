@@ -26,6 +26,38 @@ for (let i = 0; i <= cities.length; i++){
 }
 
 
+// var listCity = [
+//     ['Lome','Tsevie','Vogan','Aneho','Tabligbo'],
+//     ['Atakpame','Notse','Kpalime','Badou','Amlame'],
+//     ['Sokode','Tchamba','Sotouboua','Blitta','Djarkpanga'],
+//     ['Bafilo','Bassar','Kara', 'Kpagouda','Niamtougou','Defale'],
+//     ['Dapaong','Mango','Galangachi','Biankouri','Vavou']
+//                 ]
+//                 for (let i = 0; i < listCity.length; i++){
+//                 console.log(listCity.length)
+//                 let Region1 = listCity[Math.floor(Math.random()* listCity.length)]
+//                     for (let i = 0; i < Region1.length; i++){
+//                         let city1 = Region1[Math.floor(Math.random()* Region1.length)]
+//                         console.log("PlayoffCity1: " +city1);
+//                         listCity = listCity.filter(item => item !== Region1);
+//                         Region1 = Region1.filter(item => item !== city1);
+//                     }
+
+//                 console.log(Region1);
+//                 // console.log(listCity);
+//                 // console.log(listCity.length);
+
+//                 let Region2 = listCity[Math.floor(Math.random()* listCity.length)]
+//                     for (let i = 0; i < Region2.length; i++){  
+//                         let city2 = Region2[Math.floor(Math.random()* Region2.length)]
+//                         console.log("PlayoffCity2: " +city2);
+//                         listCity = listCity.filter(item => item !== Region2);
+//                         Region2 = Region2.filter(item => item !== city2);
+//                     }
+//                 console.log(Region2);
+//                 // console.log(listCity);
+//             }
+//                 console.log(listCity.length);
 
 
 
