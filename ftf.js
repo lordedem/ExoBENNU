@@ -1,4 +1,3 @@
-
 const prompt = require('prompt-sync')();
 var country = {
     "Maritime": ['Lome', 'Tsevie', 'Vogan', 'Aneho', 'Tabligbo'],
@@ -7,13 +6,7 @@ var country = {
     "Kara": ['Bafilo', 'Bassar', 'Kara', 'Kpagouda', 'Niamtougou'],
     "Savanes": ['Dapaong', 'Mango', 'Galangachi', 'Biankouri', 'Vavou']
 }
-var region;
-var region1;
-var region2;
-var city;
-var city1;
-var city2;
-
+var region, region1, region2, city, city1, city2, gametype;
 
 function kpessekou() {
     region1 = Object.keys(country)[Math.floor(Math.random() * Object.keys(country).length)];
@@ -57,7 +50,6 @@ function zobibi(region) {
     }
 }
 
-
 function semiFinal(region1, region2) {
     return (zobibi(region1), zobibi(region2))
 }
@@ -66,20 +58,23 @@ function final(region) {
     return (zobibi(region))
 }
 
-
 let menu = true;
 while (menu) {
     console.log('\n !!!WELCOME TO THE TOURNAMENT!!! \n      1. Enter game type \n      2. Exit \n');
     menu = prompt("WELCOME! Please choose: ");
-    if (menu == "1") {
+    if (menu === "1") {
         gametype = prompt("Enter game type: ");
-        if (gametype == "Kpessekou") {
+        while (gametype !== "Kpessekou" && gametype !== "Zobibi") {
+            console.log("Invalid input ");
+            gametype = prompt("Enter game type: ");
+        }
+        if (gametype === "Kpessekou") {
             kpessekou()
         }
-        else if (gametype == "Zobibi") {
+        else if (gametype === "Zobibi") {
             console.log("1. Semi-Final \n2. Final \n");
             menu = prompt("Please choose: ");
-            if (menu == "1") {
+            if (menu === "1") {
                 region1 = prompt("Enter Region 1:" );
                 while(!Object.keys(country).includes(region1)){
                     region1 = prompt("Enter Correct Region 1:" );
@@ -88,29 +83,26 @@ while (menu) {
                 while(!Object.keys(country).includes(region2)){
                     region2 = prompt("Enter Correct Region 2:" );
                 }
-                if (region2 == region1) {
+                if (region2 === region1) {
                     region2 = prompt("Enter a Different Region: ")
                 }
                 else {
                     semiFinal(region1, region2);
                 }
             }
-            if (menu == "2") {
+            if (menu === "2") {
                 region = prompt("Enter Final Region :");
+                while(!Object.keys(country).includes(region)){
+                    region = prompt("Enter Final Region :");
+                }
                 final(region)
             }
         }
-        while (gametype != "Kpessekou" && gametype != "Zobibi") {
-            console.log("Invalid input ");
-            gametype = prompt("Enter game type: ");
-        }
     }
-    else if (menu == "2") {
+    else if (menu === "2") {
         console.log("Goodbye!!!");
         break;
     }
-
     else {
-        console.log('\n !!!WELCOME TO THE TOURNAMENT!!! \n      1. Enter game type \n      2. Exit \n');
     }
 }
